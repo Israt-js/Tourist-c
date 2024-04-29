@@ -78,7 +78,7 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
               </div>
             </div>
             <div className="form-control mt-6">
-              <button type="submit" className="btn btn-success text-white">Register</button>
+              <button type="submit" className="btn bg-slate-700 text-white">Register</button>
             </div>
           </form>
           {

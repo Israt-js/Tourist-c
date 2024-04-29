@@ -27,8 +27,7 @@ const Navber = () => {
                         <li><Link to={'/register'}>Register</Link></li>
                     </ul>
                 </div>
-                <img className="h-14 w-14" src="https://i.ibb.co/Fz00jTc/world.png" alt="o"/>
-                <h1 className="text-3xl font-extrabold relative">Tour</h1>
+                <img className="h-28 w-32" src="https://i.ibb.co/cNYZwZL/438083803-449378790921016-1153236121929537865-n-removebg-preview.png" alt="o"/>
 
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -46,10 +45,10 @@ const Navber = () => {
                         user ? 
                         <>
                             <li><img src={user.photoURL} alt="User" title={user.displayName} className="rounded-full online h-8 w-8 mt-2 mr-2" /></li>
-                            <li className="btn btn-success text-white m-1"><a onClick={handleLogOut} href="#">LogOut</a></li>
+                            <li className="btn bg-slate-700 text-white m-1"><a onClick={handleLogOut} href="#">LogOut</a></li>
                         </>
                         :
-                        <li><Link className="btn btn-success text-white m-1" to={'/login'}>Login</Link></li>  
+                        <li><Link className="btn bg-slate-700 text-white m-1" to={'/login'}>Login</Link></li>  
                     }
                 </ul>
             </div>

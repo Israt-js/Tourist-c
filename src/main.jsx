@@ -11,6 +11,8 @@ import Home from './component/Home/Home';
 import Login from './component/login/Login';
 import Register from './component/register/Register';
 import AuthProvider from './component/AuthProvider/AuthProvider';
+import AddTouristsSpot from './component/AddTourist/AddTouristsSpot';
+import PrivateRoute from './component/private/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/AddTouristsSpot",
+        element: <PrivateRoute><AddTouristsSpot></AddTouristsSpot></PrivateRoute>
       },
       {
         path: "/login",

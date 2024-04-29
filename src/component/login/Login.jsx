@@ -87,7 +87,7 @@ const Login = () => {
           {loginError && <p className="text-red-600 text-xl">{loginError}</p>}
           <div className="">
             <button  className='btn w-full mb-2' onClick={handleLogInWithPopup}> <FaGoogle /> Google login</button>
-            <button onClick={HandleFacebookAuth} className='btn btn-primary w-full text-white'> <FaFacebook/> Facebook</button>
+            <button onClick={HandleFacebookAuth} className='btn bg-slate-700 w-full text-white'> <FaFacebook/> Facebook</button>
       </div>
       <p className='text-2xl font-medium text-center p-5'>Don't have an account? <Link to={'/register'}>Register</Link></p>
         </div>
