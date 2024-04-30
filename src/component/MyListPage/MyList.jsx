@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+
 const MyList = ({list}) => {
-    const { image, countryName, description } = list
+    const { _id, image, countryName, description } = list
    const handleDelete = _id => {
     console.log(_id)
     Swal.fire({
@@ -40,7 +43,8 @@ const MyList = ({list}) => {
     <h2 className="card-title">{countryName}</h2>
     <p>{description}</p>
     <div className="card-actions">
-    <button onClick={() => handleDelete(list._id)}>Delete</button>
+        <Link to={`/update/${_id}`}><button className="bg-slate-700 p-2 m-4 text-white rounded-md border-none">Update</button></Link>
+    <button className="bg-slate-700 p-2 m-4 text-white rounded-md border-none" onClick={() => handleDelete(list._id)}>Delete</button>
     </div>
   </div>
 </div>

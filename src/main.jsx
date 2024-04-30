@@ -18,6 +18,7 @@ import ViewDetails from './component/ViewDetails';
 import TourSpot from './component/TourSpot';
 import MyListPage from './component/MyListPage/Mylistpage';
 import MyList from './component/MyListPage/MyList';
+import Update from './component/MyListPage/Update';
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,11 @@ const router = createBrowserRouter([
       {
         path: "/myListe",
         element: <MyList></MyList>
+      },
+      {
+        path: "/update/:id",
+        element: <Update></Update>,
+        loader: ({params}) => fetch(`http://localhost:5000/touristsSpots${params.id}`)
       }
     ],
   },
