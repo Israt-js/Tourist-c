@@ -13,6 +13,9 @@ import Register from './component/register/Register';
 import AuthProvider from './component/AuthProvider/AuthProvider';
 import AddTouristsSpot from './component/AddTourist/AddTouristsSpot';
 import PrivateRoute from './component/private/PrivateRoute';
+import TourCard from './component/TourCard';
+import ViewDetails from './component/ViewDetails';
+import TourSpot from './component/TourSpot';
 
 const router = createBrowserRouter([
   {
@@ -22,10 +25,16 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch('http://localhost:5000/touristsSpots')
       },
       {
         path: "/AddTouristsSpot",
         element: <PrivateRoute><AddTouristsSpot></AddTouristsSpot></PrivateRoute>
+      },
+      {
+        path: "/viewD/:id",
+        element: <PrivateRoute> <ViewDetails></ViewDetails> </PrivateRoute>,
+        loader: () => fetch('http://localhost:5000/touristsSpots')
       },
       {
         path: "/login",
@@ -34,6 +43,14 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>
+      },
+      {
+        path: "/tourCard",
+        element: <TourCard></TourCard>
+      },      
+      {
+        path: "/tourSpot",
+        element: <TourSpot></TourSpot>
       }
     ],
   },

@@ -1,4 +1,11 @@
+import { useLoaderData } from "react-router-dom";
+import TourCard from "../TourCard";
 const Home = () => {
+  const tours = useLoaderData();
+  if (!tours) {
+    return <div>Loading...</div>;
+  }
+
     return(
       <div className="">
         <div className="carousel w-full h-[680px] mt-3 mb-3">
@@ -25,7 +32,12 @@ const Home = () => {
   </div> 
 </div>
 <div className="destination">
-    <h1 className="text-4xl font-extrabold text-center m-3 b-5">Destination</h1>
+    <h1 className="text-4xl font-extrabold text-center m-3 b-5">Destination </h1>
+    <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 mb-5">
+    {tours.map((tour) => (
+          <TourCard key={tour._id} tour={tour} />
+    ))}
+    </div>
 </div>
 </div>
     )
