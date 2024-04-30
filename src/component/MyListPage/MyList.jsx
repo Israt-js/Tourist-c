@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const MyList = ({list}) => {
+const MyList = ({list, toure, setToure}) => {
     const { _id, image, countryName, description } = list
    const handleDelete = _id => {
     console.log(_id)
@@ -27,6 +27,8 @@ const MyList = ({list}) => {
             text: "Your add country has been deleted.",
             icon: "success"
           });
+          const remaining = toure.filter(up => up._id !== _id)
+          setToure(remaining);
             }
         })
         }

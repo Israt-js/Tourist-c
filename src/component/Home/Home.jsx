@@ -3,9 +3,6 @@ import TourCard from "../TourCard";
 import "./Home.css"
 const Home = () => {
   const tours = useLoaderData();
-  if (!tours) {
-    return <div>Loading...</div>;
-  }
 
     return(
       <div className="">

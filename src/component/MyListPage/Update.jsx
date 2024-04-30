@@ -31,7 +31,7 @@ const Update = () => {
         .then(res => res.json())
         .then(touristsSpots => {
          console.log(touristsSpots);
-         if(touristsSpots.insertedId){
+         if(touristsSpots.deleteCount > 0){
            alert('Update successfully')
            form.reset()
          }
