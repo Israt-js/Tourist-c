@@ -19,13 +19,11 @@ import TourSpot from './component/TourSpot';
 import MyListPage from './component/MyListPage/Mylistpage';
 import MyList from './component/MyListPage/MyList';
 import Update from './component/MyListPage/Update';
-import ErrorPage from './Errorpage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Roote></Roote>,
-    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
