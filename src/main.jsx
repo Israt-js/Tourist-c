@@ -16,6 +16,8 @@ import PrivateRoute from './component/private/PrivateRoute';
 import TourCard from './component/TourCard';
 import ViewDetails from './component/ViewDetails';
 import TourSpot from './component/TourSpot';
+import MyListPage from './component/MyListPage/Mylistpage';
+import MyList from './component/MyListPage/MyList';
 
 const router = createBrowserRouter([
   {
@@ -28,13 +30,17 @@ const router = createBrowserRouter([
         loader: () => fetch('http://localhost:5000/touristsSpots')
       },
       {
+        path: "/myList",
+        element: <MyListPage></MyListPage>,
+        loader: () => fetch('http://localhost:5000/touristsSpots')
+      },
+      {
         path: "/AddTouristsSpot",
         element: <PrivateRoute><AddTouristsSpot></AddTouristsSpot></PrivateRoute>
       },
       {
-        path: "/viewD/:id",
+        path: "/viewDetails/:id",
         element: <PrivateRoute> <ViewDetails></ViewDetails> </PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/touristsSpots')
       },
       {
         path: "/login",
@@ -51,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: "/tourSpot",
         element: <TourSpot></TourSpot>
+      },
+      {
+        path: "/myListe",
+        element: <MyList></MyList>
       }
     ],
   },

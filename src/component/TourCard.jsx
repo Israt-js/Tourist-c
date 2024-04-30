@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const TourCard = ({tour}) => {
 
-  const { image, description, countryName } = tour
+  const { _id, image, description, countryName } = tour
 
     return(
 <div className="destination">
@@ -14,7 +14,7 @@ const TourCard = ({tour}) => {
     <h2 className="card-title">{countryName}</h2>
     <p>{description}</p>
     <div className="card-actions">
-    <Link to={`/viewD/${tour._id}`} className="">
+    <Link to={`/viewDetails/${tour._id}`} className="">
         <button className="bg-slate-700 p-2 m-4 text-white rounded-md border-none">View Details</button>
    </Link>
     </div>
